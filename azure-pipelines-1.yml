@@ -24,7 +24,7 @@ stages:
               displayName: clone postgresql samples repo
               inputs:
                 script: |
-                  git clone https://github.com/MaciejReplin/DbSourceControl\Yuniql $(Build.SourcesDirectory)\yuniql\new\
+                  git clone https://github.com/MaciejReplin/DbSourceControl/ $(Build.SourcesDirectory)\yuniql\new\
 
             - task: UseYUNIQLCLI@1
               displayName: yuniql install
