@@ -13,6 +13,6 @@ steps:
   inputs:
     version: 'latest'
     connectionString: 'Server=tcp:<AZ-SQLSERVER>,1433;Initial Catalog=<AZ-SQLDB>;User ID=<USERID>;Password=<PASSWORD>;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;'
-    workspacePath: '$(Build.SourcesDirectory)\samples\basic-sqlserver-sample'
+    workspacePath: '$(Build.SourcesDirectory)\Yuniql'
     targetPlatform: 'SqlServer'
     additionalArguments: '--debug'
