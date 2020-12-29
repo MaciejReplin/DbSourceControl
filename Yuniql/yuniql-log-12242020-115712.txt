@@ -1,0 +1,3 @@
+ERR   2020-12-24 10:57:13Z   Failed to execute info function. Arrg... something seems broken.
+Internal error message: Invalid object name 'dbo.__yuniqldbversion'. .
+If you think this is a bug, please report an issue here https://github.com/rdagumampan/yuniql/issues.

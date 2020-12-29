@@ -1,0 +1,143 @@
+INF   2020-12-24 11:05:24Z   Started migration from C:\git\Yuniql\basic-sqlserver-sample.
+INF   2020-12-24 11:05:24Z   No explicit target version requested. We'll use latest available locally v0.01 on C:\git\Yuniql\basic-sqlserver-sample.
+DBG   2020-12-24 11:05:24Z   Replaced YUNIQL_DB_NAME with AdventureWorksLT
+DBG   2020-12-24 11:05:24Z   Executing statement: 
+SELECT ISNULL(database_id, 0) FROM [sys].[databases] WHERE name = 'AdventureWorksLT'
+DBG   2020-12-24 11:05:25Z   Replaced YUNIQL_DB_NAME with AdventureWorksLT
+DBG   2020-12-24 11:05:25Z   Replaced YUNIQL_SCHEMA_NAME with dbo
+DBG   2020-12-24 11:05:25Z   Replaced YUNIQL_TABLE_NAME with __yuniqldbversion
+DBG   2020-12-24 11:05:25Z   Executing statement: 
+SELECT ISNULL(OBJECT_ID('[dbo].[__yuniqldbversion]'), 0)
+DBG   2020-12-24 11:05:26Z   Replaced YUNIQL_DB_NAME with AdventureWorksLT
+DBG   2020-12-24 11:05:26Z   Replaced YUNIQL_SCHEMA_NAME with dbo
+DBG   2020-12-24 11:05:26Z   Replaced YUNIQL_TABLE_NAME with __yuniqldbversion
+DBG   2020-12-24 11:05:26Z   Executing statement: 
+SELECT SequenceId, Version, AppliedOnUtc, AppliedByUser, AppliedByTool, AppliedByToolVersion, AdditionalArtifacts FROM [dbo].[__yuniqldbversion] ORDER BY Version ASC;
+DBG   2020-12-24 11:05:26Z   Replaced YUNIQL_DB_NAME with AdventureWorksLT
+DBG   2020-12-24 11:05:26Z   Replaced YUNIQL_SCHEMA_NAME with dbo
+DBG   2020-12-24 11:05:26Z   Replaced YUNIQL_TABLE_NAME with __yuniqldbversion
+DBG   2020-12-24 11:05:26Z   Executing statement: 
+SELECT TOP 1 Version FROM [dbo].[__yuniqldbversion] ORDER BY SequenceId DESC;
+INF   2020-12-24 11:05:27Z   Found 0 script files on C:\git\Yuniql\basic-sqlserver-sample\_pre
+
+INF   2020-12-24 11:05:27Z   Executed script files on C:\git\Yuniql\basic-sqlserver-sample\_pre
+INF   2020-12-24 11:05:27Z   Found 1 script files on C:\git\Yuniql\basic-sqlserver-sample
+  + 02-setup-data.sql
+DBG   2020-12-24 11:05:27Z   Environment.OSVersion.Platform: Win32NT, Microsoft Windows NT 6.2.9200.0
+DBG   2020-12-24 11:05:27Z   Environment.NewLine.UTF8.byteCount: 2
+DBG   2020-12-24 11:05:27Z   sqlStatementRaw.Length: 2540
+DBG   2020-12-24 11:05:27Z   sqlStatementRaw.UTF8.byteCount: 2540
+DBG   2020-12-24 11:05:27Z   commentText.byteCount: 31
+DBG   2020-12-24 11:05:27Z   commentText: /*Data for the table regions */, 
+startPosition: 0, stopPosition: 31
+DBG   2020-12-24 11:05:27Z   commentText.byteCount: 33
+DBG   2020-12-24 11:05:27Z   commentText: /*Data for the table countries */, 
+startPosition: 381, stopPosition: 414
+DBG   2020-12-24 11:05:27Z   Line text: GO, line.Length: 2, sqlStatementBuilder.Length: 385, envNewLine.Length: 2
+DBG   2020-12-24 11:05:27Z   Line text: GO, startPosition: 385, stopPosition: 387
+DBG   2020-12-24 11:05:27Z   Line text: GO, foundInCommentBlock: True
+DBG   2020-12-24 11:05:27Z   Bath separator GO found inside comment block. Will continue building the sql statement.
+DBG   2020-12-24 11:05:27Z   Executing sql statement as part of : C:\git\Yuniql\basic-sqlserver-sample\v0.01\02-setup-data.sql
+DBG   2020-12-24 11:05:27Z   Executing statement: 
+/*Data for the table regions */
+SET IDENTITY_INSERT regions ON;
+  
+INSERT INTO regions(region_id,region_name) VALUES (1,'Europe');
+INSERT INTO regions(region_id,region_name) VALUES (2,'Americas');
+INSERT INTO regions(region_id,region_name) VALUES (3,'Asia');
+INSERT INTO regions(region_id,region_name) VALUES (4,'Middle East and Africa');
+ 
+SET IDENTITY_INSERT regions OFF;  
+GO
+ 
+/*Data for the table countries */
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('AR','Argentina',2);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('AU','Australia',3);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('BE','Belgium',1);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('BR','Brazil',2);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('CA','Canada',2);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('CH','Switzerland',1);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('CN','China',3);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('DE','Germany',1);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('DK','Denmark',1);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('EG','Egypt',4);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('FR','France',1);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('HK','HongKong',3);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('IL','Israel',4);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('IN','India',3);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('IT','Italy',1);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('JP','Japan',3);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('KW','Kuwait',4);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('MX','Mexico',2);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('NG','Nigeria',4);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('NL','Netherlands',1);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('SG','Singapore',3);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('UK','United Kingdom',1);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('US','United States of America',2);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('ZM','Zambia',4);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('ZW','Zimbabwe',4);
+ERR   2020-12-24 11:05:27Z   Failed to execute sql statements in script file C:\git\Yuniql\basic-sqlserver-sample\v0.01\02-setup-data.sql.
+The failing statement starts here --------------------------
+/*Data for the table regions */
+SET IDENTITY_INSERT regions ON;
+  
+INSERT INTO regions(region_id,region_name) VALUES (1,'Europe');
+INSERT INTO regions(region_id,region_name) VALUES (2,'Americas');
+INSERT INTO regions(region_id,region_name) VALUES (3,'Asia');
+INSERT INTO regions(region_id,region_name) VALUES (4,'Middle East and Africa');
+ 
+SET IDENTITY_INSERT regions OFF;  
+GO
+ 
+/*Data for the table countries */
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('AR','Argentina',2);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('AU','Australia',3);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('BE','Belgium',1);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('BR','Brazil',2);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('CA','Canada',2);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('CH','Switzerland',1);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('CN','China',3);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('DE','Germany',1);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('DK','Denmark',1);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('EG','Egypt',4);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('FR','France',1);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('HK','HongKong',3);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('IL','Israel',4);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('IN','India',3);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('IT','Italy',1);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('JP','Japan',3);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('KW','Kuwait',4);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('MX','Mexico',2);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('NG','Nigeria',4);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('NL','Netherlands',1);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('SG','Singapore',3);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('UK','United Kingdom',1);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('US','United States of America',2);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('ZM','Zambia',4);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('ZW','Zimbabwe',4); 
+The failing statement ends here --------------------------
+ERR   2020-12-24 11:05:27Z   Failed to execute run function. Arrg... something seems broken.
+Internal error message: System.Data.SqlClient.SqlException (0x80131904): Incorrect syntax near 'GO'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite, String methodName)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Yuniql.Core.ConnectionExtensions.ExecuteNonQuery(IDbConnection connection, String commandText, Nullable`1 commandTimeout, IDbTransaction transaction, ITraceService traceService) in C:\projects\yuniql\yuniql-core\ConnectionExtensions.cs:line 68
+   at Yuniql.Core.ConfigurationDataService.ExecuteSql(IDbConnection connection, String commandText, Nullable`1 commandTimeout, IDbTransaction transaction, ITraceService traceService) in C:\projects\yuniql\yuniql-core\ConfigurationDataService.cs:line 292
+   at Yuniql.Core.MigrationService.<>c__DisplayClass11_1.<RunSqlScripts>b__3(String sqlStatement) in C:\projects\yuniql\yuniql-core\MigrationService.cs:line 357
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Yuniql.Core.MigrationService.<>c__DisplayClass11_0.<RunSqlScripts>b__1(String scriptFile) in C:\projects\yuniql\yuniql-core\MigrationService.cs:line 374
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Yuniql.Core.MigrationService.RunSqlScripts(IDbConnection connection, IDbTransaction transaction, NonTransactionalContext nonTransactionalContext, String version, String workingPath, String scriptDirectory, String metaSchemaName, String metaTableName, List`1 tokenKeyPairs, Nullable`1 commandTimeout, String environmentCode, String appliedByTool, String appliedByToolVersion) in C:\projects\yuniql\yuniql-core\MigrationService.cs:line 376
+   at Yuniql.Core.MigrationService.<>c__DisplayClass10_0.<RunVersionScripts>b__2(String versionDirectory) in C:\projects\yuniql\yuniql-core\MigrationService.cs:line 298
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Yuniql.Core.MigrationService.RunVersionScripts(IDbConnection connection, IDbTransaction transaction, List`1 dbVersions, String workingPath, String targetVersion, NonTransactionalContext nonTransactionalContext, List`1 tokenKeyPairs, String bulkSeparator, String metaSchemaName, String metaTableName, Nullable`1 commandTimeout, Nullable`1 bulkBatchSize, String appliedByTool, String appliedByToolVersion, String environmentCode) in C:\projects\yuniql\yuniql-core\MigrationService.cs:line 316
+   at Yuniql.Core.MigrationService.<Run>g__RunAllInternal|9_2(IDbConnection connection, IDbTransaction transaction, <>c__DisplayClass9_0& ) in C:\projects\yuniql\yuniql-core\MigrationService.cs:line 213
+   at Yuniql.Core.MigrationService.Run(String workingPath, String targetVersion, Nullable`1 autoCreateDatabase, List`1 tokenKeyPairs, Nullable`1 verifyOnly, String bulkSeparator, String metaSchemaName, String metaTableName, Nullable`1 commandTimeout, Nullable`1 bulkBatchSize, String appliedByTool, String appliedByToolVersion, String environmentCode, Nullable`1 resumeFromFailure, Boolean noTransaction) in C:\projects\yuniql\yuniql-core\MigrationService.cs:line 150
+   at Yuniql.CLI.CommandLineService.RunMigration(RunOption opts) in C:\projects\yuniql\yuniql-cli\CommandLineService.cs:line 146
+ClientConnectionId:11db3311-e418-42c5-962e-838bb448a5fd
+Error Number:102,State:1,Class:15.
+If you think this is a bug, please report an issue here https://github.com/rdagumampan/yuniql/issues.

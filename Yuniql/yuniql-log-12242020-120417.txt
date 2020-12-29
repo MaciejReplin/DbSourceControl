@@ -1,0 +1,2 @@
+INF   2020-12-24 11:04:18Z   Listed all schema versions applied to database on  workspace.
+For platforms not supporting full transactional DDL operations (ex. MySql, CockroachDB, Snowflake), unsuccessful migrations will show the status as Failed and you can look for LastFailedScript and LastScriptError in the schema version tracking table.

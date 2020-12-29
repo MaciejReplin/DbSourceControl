@@ -1,0 +1,18 @@
+INF   2020-12-24 11:01:17Z   Started migration from C:\git\Yuniql\basic-sqlserver-sample.
+INF   2020-12-24 11:01:17Z   No explicit target version requested. We'll use latest available locally v0.00 on C:\git\Yuniql\basic-sqlserver-sample.
+INF   2020-12-24 11:01:19Z   Found 0 script files on C:\git\Yuniql\basic-sqlserver-sample\_pre
+
+INF   2020-12-24 11:01:19Z   Executed script files on C:\git\Yuniql\basic-sqlserver-sample\_pre
+INF   2020-12-24 11:01:19Z   Found 1 script files on C:\git\Yuniql\basic-sqlserver-sample
+  + 01-setup-tables.sql
+INF   2020-12-24 11:01:19Z   Executed script file C:\git\Yuniql\basic-sqlserver-sample\v0.00\01-setup-tables.sql.
+INF   2020-12-24 11:01:19Z   Found 0 script files on C:\git\Yuniql\basic-sqlserver-sample\v0.00
+
+INF   2020-12-24 11:01:20Z   Completed migration to version C:\git\Yuniql\basic-sqlserver-sample\v0.00
+INF   2020-12-24 11:01:20Z   Found 0 script files on C:\git\Yuniql\basic-sqlserver-sample\_draft
+
+INF   2020-12-24 11:01:20Z   Executed script files on C:\git\Yuniql\basic-sqlserver-sample\_draft
+INF   2020-12-24 11:01:20Z   Found 0 script files on C:\git\Yuniql\basic-sqlserver-sample\_post
+
+INF   2020-12-24 11:01:20Z   Executed script files on C:\git\Yuniql\basic-sqlserver-sample\_post
+INF   2020-12-24 11:01:20Z   Schema migration completed successfuly on C:\git\Yuniql\basic-sqlserver-sample.

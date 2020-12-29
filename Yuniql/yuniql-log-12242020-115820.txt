@@ -1,0 +1,57 @@
+INF   2020-12-24 10:58:20Z   Started migration from C:\git\Yuniql\basic-sqlserver-sample.
+INF   2020-12-24 10:58:20Z   No explicit target version requested. We'll use latest available locally v0.00 on C:\git\Yuniql\basic-sqlserver-sample.
+INF   2020-12-24 10:58:21Z   Target database AdventureWorksLT on tcp:sql-server-alation-test01.database.windows.net,1433 not yet configured for migration.
+INF   2020-12-24 10:58:22Z   Configured database migration support for AdventureWorksLT on tcp:sql-server-alation-test01.database.windows.net,1433.
+INF   2020-12-24 10:58:22Z   Found 0 script files on C:\git\Yuniql\basic-sqlserver-sample\_init
+
+INF   2020-12-24 10:58:22Z   Executed script files on C:\git\Yuniql\basic-sqlserver-sample\_init
+INF   2020-12-24 10:58:22Z   Found 0 script files on C:\git\Yuniql\basic-sqlserver-sample\_pre
+
+INF   2020-12-24 10:58:22Z   Executed script files on C:\git\Yuniql\basic-sqlserver-sample\_pre
+INF   2020-12-24 10:58:22Z   Found 2 script files on C:\git\Yuniql\basic-sqlserver-sample
+  + 01-setup-tables.sql
+  + 02-setup-data.sql
+INF   2020-12-24 10:58:22Z   Executed script file C:\git\Yuniql\basic-sqlserver-sample\v0.00\01-setup-tables.sql.
+ERR   2020-12-24 10:58:23Z   Failed to execute sql statements in script file C:\git\Yuniql\basic-sqlserver-sample\v0.00\02-setup-data.sql.
+The failing statement starts here --------------------------
+/*Data for the table regions */
+SET IDENTITY_INSERT regions ON;
+  
+INSERT INTO regions(region_id,region_name) VALUES (1,'Europe');
+INSERT INTO regions(region_id,region_name) VALUES (2,'Americas');
+INSERT INTO regions(region_id,region_name) VALUES (3,'Asia');
+INSERT INTO regions(region_id,region_name) VALUES (4,'Middle East and Africa');
+ 
+SET IDENTITY_INSERT regions OFF;  
+GO
+ 
+/*Data for the table countries */
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('AR','Argentina',2);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('AU','Australia',3);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('BE','Belgium',1);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('BR','Brazil',2);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('CA','Canada',2);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('CH','Switzerland',1);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('CN','China',3);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('DE','Germany',1);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('DK','Denmark',1);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('EG','Egypt',4);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('FR','France',1);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('HK','HongKong',3);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('IL','Israel',4);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('IN','India',3);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('IT','Italy',1);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('JP','Japan',3);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('KW','Kuwait',4);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('MX','Mexico',2);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('NG','Nigeria',4);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('NL','Netherlands',1);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('SG','Singapore',3);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('UK','United Kingdom',1);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('US','United States of America',2);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('ZM','Zambia',4);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('ZW','Zimbabwe',4); 
+The failing statement ends here --------------------------
+ERR   2020-12-24 10:58:23Z   Failed to execute run function. Arrg... something seems broken.
+Internal error message: Incorrect syntax near 'GO'. .
+If you think this is a bug, please report an issue here https://github.com/rdagumampan/yuniql/issues.

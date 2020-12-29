@@ -1,0 +1,76 @@
+INF   2020-12-24 11:06:11Z   Started migration from C:\git\Yuniql\basic-sqlserver-sample.
+INF   2020-12-24 11:06:11Z   No explicit target version requested. We'll use latest available locally v0.01 on C:\git\Yuniql\basic-sqlserver-sample.
+DBG   2020-12-24 11:06:11Z   Replaced YUNIQL_DB_NAME with AdventureWorksLT
+DBG   2020-12-24 11:06:11Z   Executing statement: 
+SELECT ISNULL(database_id, 0) FROM [sys].[databases] WHERE name = 'AdventureWorksLT'
+DBG   2020-12-24 11:06:12Z   Replaced YUNIQL_DB_NAME with AdventureWorksLT
+DBG   2020-12-24 11:06:12Z   Replaced YUNIQL_SCHEMA_NAME with dbo
+DBG   2020-12-24 11:06:12Z   Replaced YUNIQL_TABLE_NAME with __yuniqldbversion
+DBG   2020-12-24 11:06:12Z   Executing statement: 
+SELECT ISNULL(OBJECT_ID('[dbo].[__yuniqldbversion]'), 0)
+DBG   2020-12-24 11:06:13Z   Replaced YUNIQL_DB_NAME with AdventureWorksLT
+DBG   2020-12-24 11:06:13Z   Replaced YUNIQL_SCHEMA_NAME with dbo
+DBG   2020-12-24 11:06:13Z   Replaced YUNIQL_TABLE_NAME with __yuniqldbversion
+DBG   2020-12-24 11:06:13Z   Executing statement: 
+SELECT SequenceId, Version, AppliedOnUtc, AppliedByUser, AppliedByTool, AppliedByToolVersion, AdditionalArtifacts FROM [dbo].[__yuniqldbversion] ORDER BY Version ASC;
+DBG   2020-12-24 11:06:13Z   Replaced YUNIQL_DB_NAME with AdventureWorksLT
+DBG   2020-12-24 11:06:13Z   Replaced YUNIQL_SCHEMA_NAME with dbo
+DBG   2020-12-24 11:06:13Z   Replaced YUNIQL_TABLE_NAME with __yuniqldbversion
+DBG   2020-12-24 11:06:13Z   Executing statement: 
+SELECT TOP 1 Version FROM [dbo].[__yuniqldbversion] ORDER BY SequenceId DESC;
+INF   2020-12-24 11:06:14Z   Found 0 script files on C:\git\Yuniql\basic-sqlserver-sample\_pre
+
+INF   2020-12-24 11:06:14Z   Executed script files on C:\git\Yuniql\basic-sqlserver-sample\_pre
+INF   2020-12-24 11:06:14Z   Found 1 script files on C:\git\Yuniql\basic-sqlserver-sample
+  + 02-setup-data.sql
+DBG   2020-12-24 11:06:14Z   Environment.OSVersion.Platform: Win32NT, Microsoft Windows NT 6.2.9200.0
+DBG   2020-12-24 11:06:14Z   Environment.NewLine.UTF8.byteCount: 2
+DBG   2020-12-24 11:06:14Z   sqlStatementRaw.Length: 2462
+DBG   2020-12-24 11:06:14Z   sqlStatementRaw.UTF8.byteCount: 2462
+DBG   2020-12-24 11:06:14Z   Executing sql statement as part of : C:\git\Yuniql\basic-sqlserver-sample\v0.01\02-setup-data.sql
+DBG   2020-12-24 11:06:14Z   Executing statement: 
+SET IDENTITY_INSERT regions ON;
+INSERT INTO regions(region_id,region_name) VALUES (1,'Europe');
+INSERT INTO regions(region_id,region_name) VALUES (2,'Americas');
+INSERT INTO regions(region_id,region_name) VALUES (3,'Asia');
+INSERT INTO regions(region_id,region_name) VALUES (4,'Middle East and Africa');
+SET IDENTITY_INSERT regions OFF;  
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('AR','Argentina',2);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('AU','Australia',3);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('BE','Belgium',1);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('BR','Brazil',2);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('CA','Canada',2);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('CH','Switzerland',1);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('CN','China',3);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('DE','Germany',1);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('DK','Denmark',1);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('EG','Egypt',4);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('FR','France',1);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('HK','HongKong',3);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('IL','Israel',4);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('IN','India',3);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('IT','Italy',1);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('JP','Japan',3);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('KW','Kuwait',4);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('MX','Mexico',2);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('NG','Nigeria',4);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('NL','Netherlands',1);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('SG','Singapore',3);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('UK','United Kingdom',1);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('US','United States of America',2);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('ZM','Zambia',4);
+INSERT INTO countries(country_id,country_name,region_id) VALUES ('ZW','Zimbabwe',4);
+INF   2020-12-24 11:06:14Z   Executed script file C:\git\Yuniql\basic-sqlserver-sample\v0.01\02-setup-data.sql.
+INF   2020-12-24 11:06:14Z   Found 0 script files on C:\git\Yuniql\basic-sqlserver-sample\v0.01
+
+DBG   2020-12-24 11:06:14Z   Replaced YUNIQL_DB_NAME with AdventureWorksLT
+DBG   2020-12-24 11:06:14Z   Replaced YUNIQL_SCHEMA_NAME with dbo
+DBG   2020-12-24 11:06:14Z   Replaced YUNIQL_TABLE_NAME with __yuniqldbversion
+INF   2020-12-24 11:06:14Z   Completed migration to version C:\git\Yuniql\basic-sqlserver-sample\v0.01
+INF   2020-12-24 11:06:14Z   Found 0 script files on C:\git\Yuniql\basic-sqlserver-sample\_draft
+
+INF   2020-12-24 11:06:14Z   Executed script files on C:\git\Yuniql\basic-sqlserver-sample\_draft
+INF   2020-12-24 11:06:14Z   Found 0 script files on C:\git\Yuniql\basic-sqlserver-sample\_post
+
+INF   2020-12-24 11:06:14Z   Executed script files on C:\git\Yuniql\basic-sqlserver-sample\_post
+INF   2020-12-24 11:06:15Z   Schema migration completed successfuly on C:\git\Yuniql\basic-sqlserver-sample.
