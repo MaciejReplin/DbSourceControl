@@ -25,6 +25,8 @@ stages:
               inputs:
                 script: |
                   git clone https://github.com/MaciejReplin/DbSourceControl/ $(Build.SourcesDirectory)\yuniql\new\
+                  dir $(Build.SourcesDirectory)\yuniql\new\
+                  
 
             - task: UseYUNIQLCLI@1
               displayName: yuniql install
@@ -36,6 +38,6 @@ stages:
               inputs:
                 version: 'latest'
                 connectionString: '$(DBConnectionString)'
-                workspacePath: '$(Build.SourcesDirectory)\yuniql\new'
+                workspacePath: '$(Build.SourcesDirectory)\yuniql\new\Yuniql'
                 targetPlatform: 'SqlServer'
                 additionalArguments: '--debug'
