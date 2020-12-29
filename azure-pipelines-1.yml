@@ -36,6 +36,6 @@ stages:
               inputs:
                 version: 'latest'
                 connectionString: '$(DBConnectionString)'
-                workspacePath: '$(Build.SourcesDirectory)\yuniql\new\samples\basic-sqlserver-sample'
+                workspacePath: '$(Build.SourcesDirectory)\yuniql\new'
                 targetPlatform: 'SqlServer'
                 additionalArguments: '--debug'
